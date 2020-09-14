@@ -1,0 +1,22 @@
+version: '3'
+services:
+  redis:
+    image: redis
+    restart: always
+  mongo:
+    image: mongo
+    restart: always
+  app:
+    build: .
+    depends_on:
+      - mongo
+      - redis
+    ports:
+    - "8000:8000"
+    environment:
+      MONGO_HOST: mongo
+      REDIS_HOST: redis
+      IPSTACK_ACCESS_KEY: XXXXXXXXXXXXXXXXXX
+      IPAPI_ACCESS_KEY: XXXXXXXXXXXXXXXXXXXX
+      IPSTACK_MAX_REQUESTS_PER_USER_PER_HOUR: 2
+      IPAPI_MAX_REQUESTS_PER_USER_PER_HOUR: 2
