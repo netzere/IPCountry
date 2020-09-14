@@ -1,8 +1,6 @@
-## Forter Home Assignment
-
 ### Implementation
 - Python3 (Flask)
-- Mongo (stores all requests, for rate liming and percentile metrics)
+- Mongo (stores all requests to vendors, for rate liming and percentile metrics)
 - Redis (IP Class B cache)
 
 #### How To Run
